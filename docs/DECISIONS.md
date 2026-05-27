@@ -22,6 +22,8 @@ Utility-first matches the iteration speed I need. Pairs natively with shadcn/ui.
 
 Copies code into the repo (not an opaque dependency), so customization is unlimited. The `Command` primitive will become the ⌘K agent palette in Phase 3, so we already have a path there.
 
+**Update 2026-05-27:** When we ran `shadcn init`, the `new-york` preset no longer exists in shadcn CLI v4.8.1. The current preset family is `nova, vega, maia, lyra, mira, luma, sera, rhea` (the "Nova generation"). Switched to `radix-nova` preset — the Radix-UI variant of the Nova style, which preserves the original intent (Radix primitives, battle-tested) while accepting shadcn's modern style direction. Alternative considered: pin to legacy shadcn 2.x — rejected because it may not support Tailwind v4 / Next.js 16 cleanly. Base color still `zinc` per the design tokens table.
+
 ## 2026-05-14 — Fonts: Geist Sans + Geist Mono
 
 Designed as a pair, free, ships via `next/font/google` with zero config. The mono is genuinely beautiful and reinforces the technical / dev-coded direction. Alternatives considered: Inter + JetBrains Mono (more universal but less cohesive); IBM Plex (warmer but heavier).

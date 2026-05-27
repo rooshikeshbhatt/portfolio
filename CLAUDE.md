@@ -30,7 +30,7 @@ We are in **Phase 1**. See `docs/ROADMAP.md` for current status.
 | Framework | Next.js 15+ (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
-| UI primitives | shadcn/ui (`new-york` style) |
+| UI primitives | shadcn/ui (`radix-nova` preset — see DECISIONS.md 2026-05-27) |
 | Fonts | Geist Sans + Geist Mono via `next/font/google` |
 | Theme | Dark mode default with toggle (`next-themes`) |
 | Hosting | Vercel |
