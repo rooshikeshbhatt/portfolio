@@ -5,28 +5,30 @@ Updated at the end of every session.
 ## Current status
 
 - **Phase:** 1 (Mode-based landing + 3 project pages)
-- **Last session:** none yet — this is the kickoff
-- **Next action:** First Claude Code session — initialize Next.js project, configure theme + fonts, build layout shell, deploy to Vercel
-- **Blockers:** none (domain can be purchased in parallel; not required to start coding)
+- **Sub-phase:** 1.1 complete ✓ — 1.2 (mode selector + 4 views) up next
+- **Live at:** https://rooshikeshbhatt.com (auto-deploys on push to main)
+- **Last session:** 2026-05-27 — Phase 1.1 foundation: Next.js 16 + Tailwind v4 + shadcn (radix-nova) + dark-mode toggle + layout shell + /api/status + availability pill + GitHub + Vercel + custom domain
+- **Next action:** Start Phase 1.2: `lib/mode.ts` (detection helpers) + `ModeSelector` component (4 chips, Recruiter default)
+- **Blockers:** none
 
 ---
 
 ## Phase 1 — Mode-based landing + 3 project pages
 
-### 1.1 Foundation (first session)
+### 1.1 Foundation (first session) ✓
 
-- [ ] Initialize Next.js 15+ project (TypeScript, Tailwind, ESLint, App Router)
-- [ ] Install and configure shadcn/ui with `new-york` style
-- [ ] Set CSS variables in `globals.css` for both light and dark theme tokens
-- [ ] Wire Geist Sans + Geist Mono via `next/font/google`
-- [ ] Install `next-themes`, set dark mode as default, add theme toggle component
-- [ ] Build layout shell in `app/layout.tsx`: top nav, footer, dock slot
-- [ ] Create `app/page.tsx` with a verification "Hello, Phase 1" + `// foundation ready` (mono) heading
-- [ ] Create `app/api/status/route.ts` returning static `{ status, message }` JSON
-- [ ] Wire availability pill to fetch `/api/status` and show colored dot + message
-- [ ] Initialize git with clean first commit
-- [ ] Create public GitHub repo and push
-- [ ] Connect repo to Vercel; verify live preview URL
+- [x] Initialize Next.js 15+ project (TypeScript, Tailwind, ESLint, App Router) — landed on Next.js 16.2.6 + Turbopack
+- [x] Install and configure shadcn/ui — `radix-nova` preset (new-york gone from current CLI; see DECISIONS.md)
+- [x] Set CSS variables in `globals.css` for both light and dark theme tokens (oklch, zinc base + cyan primary)
+- [x] Wire Geist Sans + Geist Mono via `next/font/google` (as `--font-sans` / `--font-mono`)
+- [x] Install `next-themes`, set dark mode as default, add theme toggle component (lucide Sun/Moon, shadcn ghost Button)
+- [x] Build layout shell in `app/layout.tsx`: top nav, footer, dock slot
+- [x] Create `app/page.tsx` with a verification "Hello, Phase 1" + `// foundation ready` (mono) heading
+- [x] Create `app/api/status/route.ts` returning static `{ status, message }` JSON
+- [x] Wire availability pill to fetch `/api/status` and show colored dot + message
+- [x] Initialize git with clean first commit
+- [x] Create public GitHub repo and push — github.com/rooshikeshbhatt/portfolio
+- [x] Connect repo to Vercel; verify live preview URL — https://rooshikeshbhatt.com
 
 ### 1.2 Mode selector + landing
 

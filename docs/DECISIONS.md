@@ -99,3 +99,15 @@ Pick Claude or GPT-4-class when Phase 3 starts. No multi-provider juggling — a
 ## 2026-05-14 — Drafting workflow: stay on MVP path
 
 Use Claude/Cursor with a system prompt containing 3–5 voice samples from past posts. No custom `/studio` route until friction is felt. Phase 9 is explicitly optional.
+
+## 2026-05-27 — Production hosting: live at https://rooshikeshbhatt.com
+
+Domain bought via Cloudflare. **Apex-canonical** (`rooshikeshbhatt.com`), with `www.rooshikeshbhatt.com` 308-redirecting to apex. Reasoning: shorter URL for resumes, and Google has had no apex-vs-www preference for years. Alternative considered: www-canonical (Vercel's recommended pattern; works around the historical apex-CNAME limitation) — rejected for the cleaner URL since Cloudflare's CNAME flattening solves the apex limitation anyway.
+
+DNS records on Cloudflare are a single CNAME at both `@` and `www`, pointing at Vercel's project-specific subdomain (`<project-hash>.vercel-dns-017.com`). Cloudflare's CNAME flattening transparently serves A records at apex. Cloudflare proxy is OFF (gray cloud / DNS only) so Vercel owns SSL and the edge directly. The newer CNAME pattern lets Vercel rotate IPs without us touching DNS.
+
+Every push to `main` auto-deploys to production.
+
+## 2026-05-27 — Commit attribution: no Co-Authored-By trailer
+
+Commits do not include the default Claude Code `Co-Authored-By: Claude` trailer. Per user preference — commit history reads as solely authored. Memory-tracked so future sessions remember.
