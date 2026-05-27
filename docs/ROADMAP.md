@@ -5,11 +5,11 @@ Updated at the end of every session.
 ## Current status
 
 - **Phase:** 1 (Mode-based landing + 3 project pages)
-- **Sub-phase:** 1.1 complete ✓ — 1.2 (mode selector + 4 views) up next
+- **Sub-phase:** 1.1 ✓ · 1.2 substantially in progress — mechanism + Recruiter view shipped; Peer / Hiring Manager / Client views are stubs; featured-projects section blocked on Phase 1.3
 - **Live at:** https://rooshikeshbhatt.com (auto-deploys on push to main)
-- **Last session:** 2026-05-27 — Phase 1.1 foundation: Next.js 16 + Tailwind v4 + shadcn (radix-nova) + dark-mode toggle + layout shell + /api/status + availability pill + GitHub + Vercel + custom domain
-- **Next action:** Start Phase 1.2: `lib/mode.ts` (detection helpers) + `ModeSelector` component (4 chips, Recruiter default)
-- **Blockers:** none
+- **Last session:** 2026-05-27 — Role targeting locked to Data Science + GenAI Engineering (memory-tracked); mode selector mechanism + Recruiter view (hero, facts grid, skills, capabilities, contact CTAs) shipped to prod
+- **Next action:** Phase 1.3 prep (`lib/projects.ts` data shape + 3 stubs) to unblock the featured-projects section. Alternative: scaffold Peer / Hiring Manager / Client views.
+- **Blockers:** none functional. Résumé PDF needs to land at `/public/resume.pdf` to enable the currently-disabled CTA — 30-second swap when ready.
 
 ---
 
@@ -30,12 +30,12 @@ Updated at the end of every session.
 - [x] Create public GitHub repo and push — github.com/rooshikeshbhatt/portfolio
 - [x] Connect repo to Vercel; verify live preview URL — https://rooshikeshbhatt.com
 
-### 1.2 Mode selector + landing
+### 1.2 Mode selector + landing — partial
 
-- [ ] `lib/mode.ts`: `detectModeFromReferrer`, `getStoredMode`, `setStoredMode`
-- [ ] `ModeSelector` component (4 chips, Recruiter default)
-- [ ] Hydration: SSR Recruiter view, swap on mount based on localStorage
-- [ ] `RecruiterView` (quick facts, top skills, 3 featured projects, CTAs)
+- [x] `lib/mode.ts`: `detectModeFromReferrer`, `getStoredMode`, `setStoredMode`
+- [x] `ModeSelector` component (4 chips, Recruiter default)
+- [x] Hydration: SSR Recruiter view, swap on mount based on localStorage / referrer
+- [~] `RecruiterView` — hero, 4-cell facts grid, Skills (3 groups), Capabilities (12 task pills), Contact CTAs done. **Featured projects pending Phase 1.3 data.**
 - [ ] `HiringManagerView` (case-study teasers, "How I think about..." links — stub for P1)
 - [ ] `ClientView` (outcome-led offerings, process timeline, contact CTA)
 - [ ] `PeerView` (what I'm building now, reading list, influences, GitHub activity)
