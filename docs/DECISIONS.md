@@ -111,3 +111,7 @@ Every push to `main` auto-deploys to production.
 ## 2026-05-27 — Commit attribution: no Co-Authored-By trailer
 
 Commits do not include the default Claude Code `Co-Authored-By: Claude` trailer. Per user preference — commit history reads as solely authored. Memory-tracked so future sessions remember.
+
+## 2026-05-27 — Role targeting locked: Data Science + GenAI Engineering (NOT ML/MLOps)
+
+Role targeting locked — Data Science and GenAI Engineering only. Not ML engineering, not MLOps. Data Science is backed by IBM Professional Data Science and Data Analyst certifications plus analytics projects. GenAI is backed by production projects (RAG document assistant, fraud detection pipeline, model launch framework). Tagline locked as: "Data Scientist and GenAI Engineer — analyst instincts, engineer execution." All mode views, taglines, and copy must reflect this dual targeting.

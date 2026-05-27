@@ -45,10 +45,19 @@ export function HomeLanding() {
   const View = views[mode];
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-8 p-8">
-      <h1 className="text-4xl font-semibold tracking-tight">Hello, Phase 1</h1>
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center gap-10 px-6 py-12 md:py-20">
+      <header className="text-center">
+        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+          Rooshikesh Bhatt
+        </h1>
+        <p className="mt-3 text-base text-muted-foreground md:text-lg">
+          Data Scientist and GenAI Engineer — analyst instincts, engineer execution.
+        </p>
+      </header>
       <ModeSelector value={mode} onChange={handleChange} />
-      <View />
+      <div className="w-full">
+        <View />
+      </div>
     </div>
   );
 }

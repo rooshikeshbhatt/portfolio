@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rooshikesh Bhatt",
-  description: "ML/AI engineer based in Toronto.",
+  description: "Data Scientist and GenAI Engineer in Toronto. Analyst instincts, engineer execution.",
 };
 
 export default function RootLayout({

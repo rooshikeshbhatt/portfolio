@@ -4,7 +4,7 @@ This file is loaded at the start of every Claude Code session. Read it first.
 
 ## Who I am
 
-Rooshikesh Bhatt — ML/AI engineer based in Toronto, Canada. Open work permit. Targeting remote ML/AI roles across Canada. Background in production GenAI and MLOps, with earlier work in computer vision and embedded systems.
+Rooshikesh Bhatt — **Data Scientist and GenAI Engineer** based in Toronto, Canada. Open work permit. Targeting remote **Data Science and GenAI Engineering** roles across Canada — **not ML engineering or MLOps**. Data Science is backed by IBM Professional Data Science + Data Analyst certifications and analytics projects. GenAI is backed by production projects (RAG document assistant, fraud detection pipeline, model launch framework). Earlier work in computer vision and embedded systems.
 
 ## How we work
 
