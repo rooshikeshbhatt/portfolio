@@ -16,7 +16,7 @@ Rooshikesh Bhatt — **Data Scientist and GenAI Engineer** based in Toronto, Can
 
 ## What we're building
 
-A mode-aware personal portfolio site. Eventually includes a blog, RAG-powered agent dock (⌘K from anywhere), email subscriptions, comments, reactions, and an auto-LinkedIn drafting pipeline.
+A personal portfolio site: landing page with a centered chip-strip tablist that swaps between four content sections (`overview` / `projects` / `notes` / `now`), plus deep-page routes for projects, résumé, and contact. Eventually includes a blog, RAG-powered agent dock (⌘K from anywhere), email subscriptions, comments, reactions, and an auto-LinkedIn drafting pipeline.
 
 - **Audience priority:** recruiters and hiring managers first; collaborators and engineers welcome.
 - **30-second visitor goal:** "I want to hire or work with them."

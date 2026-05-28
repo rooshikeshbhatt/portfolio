@@ -115,3 +115,32 @@ Commits do not include the default Claude Code `Co-Authored-By: Claude` trailer.
 ## 2026-05-27 — Role targeting locked: Data Science + GenAI Engineering (NOT ML/MLOps)
 
 Role targeting locked — Data Science and GenAI Engineering only. Not ML engineering, not MLOps. Data Science is backed by IBM Professional Data Science and Data Analyst certifications plus analytics projects. GenAI is backed by production projects (RAG document assistant, fraud detection pipeline, model launch framework). Tagline locked as: "Data Scientist and GenAI Engineer — analyst instincts, engineer execution." All mode views, taglines, and copy must reflect this dual targeting.
+
+## 2026-05-28 — Pivot from identity-keyed modes to content-keyed scroll-anchor sections
+
+Replaces the 4-mode landing (Recruiter / Hiring Manager / Client / Peer) with a single scrolling page whose chip-strip nav anchors to four content sections: `overview`, `projects`, `notes`, `now`. Supersedes the 2026-05-14 "Mode-based landing" decision.
+
+Reasoning: identity chips function as gates — a recruiter who'd benefit from project depth never clicks "Hiring Manager," and a hiring manager curious about current work never clicks "Peer." Re-keying chips to content lens makes every section accessible to every visitor without friction. The IA also scales naturally as content lands (each section grows in place) and removes the view-swap state + localStorage persistence that mode-keyed landing required.
+
+Implementation notes:
+- All visible sections rendered inline on `/`; `IntersectionObserver` (rootMargin `-40% 0px -55% 0px`) drives active chip state during scroll, click-to-anchor for explicit nav.
+- Chip strip sticky at `top-14` (under the `h-14` top nav, `z-30` < nav's `z-40`).
+- Each section uses `scroll-mt-32` (8rem) to clear the combined sticky-header height when jumped to.
+- `scroll-smooth` set on `<html>` for both click-jump and back-button restoration.
+- Section list lives in `lib/sections.ts` as single source of truth — both chip strip and home-landing map render off it.
+
+## 2026-05-28 — Freelancing deferred via SHOW_SERVICES feature flag
+
+Old "Client" mode migrates to a content-keyed `services` section (offerings + process timeline) gated behind a `SHOW_SERVICES` constant in `lib/sections.ts`, currently `false`. Reasoning: focus is full-time hiring, so freelancing CTAs would dilute that signal; but the concept may come back later. Flag-gating keeps the content + structure intact for one-line re-enable rather than deleting and rebuilding from git history.
+
+Pattern: `enabled: boolean` field on each `SectionConfig` entry. Chip strip and section render-map both filter on `visibleSections = sections.filter(s => s.enabled)`, so flipping `SHOW_SERVICES = true` adds the chip, the section, and registers the observer — no other code changes.
+
+## 2026-05-28 — Reverted scroll-anchor IA to chip-tab swap (kept content-keyed labels + flag)
+
+Same day as the scroll-anchor decision above: tried the continuous-scroll IA in browser, didn't feel right. Reverted to a click-swap tablist where only the active section renders.
+
+Reasoning: the original concern with the old identity-keyed chips (Recruiter / Hiring Manager / Client / Peer) was that visitors would never click chips not meant "for" them. With content-keyed labels (overview / projects / notes / now), that concern doesn't apply — every label is universally interesting, so click-swap is fine IA. Scroll-anchor felt overwhelming (everything dumped on one page) and made each section feel less distinct.
+
+What was kept from the prior pivot: content-keyed labels, `lib/sections.ts` as single source of truth, the `SHOW_SERVICES` feature flag pattern, all five section components. What was removed: `IntersectionObserver`-driven active state, sticky chip-strip + border-bottom, `scroll-mt-32` on sections, `scroll-smooth` on `<html>`, anchor-link chip interaction. Chip strip is now a centered controlled tablist; `HomeLanding` is a client component with `useState<string>` for active id.
+
+Visual: chips centered (`justify-center`) matching the existing live-site pattern; no border-line between chip strip and content, no sticky chip strip — they flow with the page above the active section.

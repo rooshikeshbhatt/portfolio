@@ -1,36 +1,29 @@
 "use client";
 
-import { MODES, type Mode } from "@/lib/mode";
+import { visibleSections } from "@/lib/sections";
 import { cn } from "@/lib/utils";
 
-const labels: Record<Mode, string> = {
-  recruiter: "Recruiter",
-  "hiring-manager": "Hiring Manager",
-  client: "Client",
-  peer: "Peer",
-};
-
 type Props = {
-  value: Mode;
-  onChange: (mode: Mode) => void;
+  value: string;
+  onChange: (id: string) => void;
 };
 
-export function ModeSelector({ value, onChange }: Props) {
+export function SectionChipStrip({ value, onChange }: Props) {
   return (
     <div
       role="tablist"
-      aria-label="Choose a view"
+      aria-label="Choose a section"
       className="flex flex-wrap items-center justify-center gap-2 font-mono text-xs"
     >
-      {MODES.map((mode) => {
-        const isActive = mode === value;
+      {visibleSections.map((section) => {
+        const isActive = section.id === value;
         return (
           <button
-            key={mode}
+            key={section.id}
             type="button"
             role="tab"
             aria-selected={isActive}
-            onClick={() => onChange(mode)}
+            onClick={() => onChange(section.id)}
             className={cn(
               "rounded border px-3 py-1 transition-colors",
               isActive
@@ -38,7 +31,7 @@ export function ModeSelector({ value, onChange }: Props) {
                 : "border-border text-muted-foreground hover:border-muted-foreground hover:text-foreground",
             )}
           >
-            {labels[mode]}
+            {section.label}
           </button>
         );
       })}
